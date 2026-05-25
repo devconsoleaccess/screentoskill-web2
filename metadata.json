@@ -1,0 +1,6 @@
+{
+  "name": "ScreenToSkill",
+  "description": "Premium parental control & gamified learning application that converts addictive screen time into skill-building educational MCQ sessions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
