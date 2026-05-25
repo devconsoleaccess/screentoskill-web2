@@ -109,7 +109,7 @@ export default function ChildrenUseCases() {
         'Physics & Chemistry basics',
         'Advanced word meanings'
       ],
-      imageUrl: '/images/agegroup/thirteenplus.jpg',
+      imageUrl: '/images/agegroup/thirteenplus.jpeg',
       icon: <GraduationCap className="w-4 h-4 text-slate-600" />
     }
   ];
