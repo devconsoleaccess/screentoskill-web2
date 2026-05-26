@@ -78,7 +78,7 @@ export default function Header() {
               className="hover:text-slate-900 transition-colors flex items-center space-x-1 cursor-pointer"
             >
               <span>Why ScreenToSkill</span>
-              <ChevronDown className="w-3 h-3 mt-0.5 text-slate-400 stroke-[2]" />
+              {/* <ChevronDown className="w-3 h-3 mt-0.5 text-slate-400 stroke-[2]" /> */}
             </button>
 
             <button
