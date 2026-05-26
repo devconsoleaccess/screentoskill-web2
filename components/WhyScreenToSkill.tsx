@@ -1,37 +1,40 @@
-'use client';
+"use client";
 
-import React from 'react';
-import Image from 'next/image';
-import { GraduationCap, Lock, BarChart3 } from 'lucide-react';
-import { HighlightUnderline } from './SubElements';
+import React from "react";
+import Image from "next/image";
+import { GraduationCap, Lock, BarChart3 } from "lucide-react";
+import { HighlightUnderline } from "./SubElements";
 
 export default function WhyScreenToSkill() {
   return (
-    <section id="why-screentoskill" className="relative py-14 sm:py-20 lg:py-24 bg-[#FBFDFF]/80 border-b border-slate-100 overflow-hidden">
+    <section
+      id="why-screentoskill"
+      className="relative py-14 sm:py-20 lg:py-24 bg-[#FBFDFF]/80 border-b border-[#E5E7EB] overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
-          
           {/* Left large visual card with sage green backdrop */}
           <div className="lg:col-span-6">
             <div className="bg-[#EBF8F4] border border-[#d2efe4] rounded-2xl sm:rounded-3xl p-6 sm:p-10 lg:p-12 relative overflow-hidden flex flex-col justify-between min-h-[420px] sm:min-h-[500px] shadow-xs group">
-              
               {/* Heading context */}
               <div className="space-y-3 max-w-md relative z-10 text-left">
                 <h2 className="text-2xl sm:text-3xl lg:text-[2.25rem] font-display font-bold text-[#0D1B15] tracking-tight leading-[1.15]">
-                  Why <HighlightUnderline>choose</HighlightUnderline> <br className="hidden sm:block" />
+                  Why <HighlightUnderline>choose</HighlightUnderline>{" "}
+                  <br className="hidden sm:block" />
                   ScreenToSkill?
                 </h2>
                 <p className="text-xs sm:text-sm text-[#1F5441]/85 leading-relaxed font-normal">
-                  We&apos;re your dedicated partner in converting idle screen-time into valuable, parent-approved skill building sessions.
+                  We&apos;re your dedicated partner in converting idle
+                  screen-time into valuable, parent-approved skill building
+                  sessions.
                 </p>
               </div>
 
               {/* Genuine Premium Illustration Image from uicore.pro */}
               <div className="relative mt-6 sm:mt-10 flex justify-center w-full h-[220px] sm:h-[300px] overflow-hidden rounded-b-2xl">
-                <Image 
-                  src="https://cdn.gtbg.uicore.pro/2025/12/Mobile-App-Why-Image.webp" 
-                  alt="Why Choose ScreenToSkill Illustration" 
+                <Image
+                  src="https://cdn.gtbg.uicore.pro/2025/12/Mobile-App-Why-Image.webp"
+                  alt="Why Choose ScreenToSkill Illustration"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-contain object-bottom group-hover:scale-[1.03] duration-500 ease-out transition-transform"
@@ -39,13 +42,11 @@ export default function WhyScreenToSkill() {
                   priority
                 />
               </div>
-
             </div>
           </div>
 
           {/* Right side beautifully formatted list items as shown in image */}
           <div className="lg:col-span-6 space-y-20 pl-0 lg:pl-4">
-            
             {/* Feature Item 1 */}
             <div className="flex items-start space-x-4 group text-left">
               <div className="w-12 h-12 rounded-full bg-[#EBE9FE] hover:bg-[#E0DCFE] flex items-center justify-center text-[#553CFA] shrink-0 shadow-xs transition-all relative overflow-hidden">
@@ -57,7 +58,8 @@ export default function WhyScreenToSkill() {
                   Reliability Parents Trust
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-550 font-normal leading-relaxed">
-                  Your peace of mind and child safety online are our absolute top priorities. Grade-specific locks activate instantly.
+                  Your peace of mind and child safety online are our absolute
+                  top priorities. Grade-specific locks activate instantly.
                 </p>
               </div>
             </div>
@@ -73,7 +75,8 @@ export default function WhyScreenToSkill() {
                   Outstanding Pedagogy Blocks
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-550 font-normal leading-relaxed">
-                  Commitment to high-performance learning values doesn&apos;t end with dry quizzes. Engage children in core skill games.
+                  Commitment to high-performance learning values doesn&apos;t
+                  end with dry quizzes. Engage children in core skill games.
                 </p>
               </div>
             </div>
@@ -89,13 +92,12 @@ export default function WhyScreenToSkill() {
                   Customized to Grade Milestone
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-550 font-normal leading-relaxed">
-                  Select exactly from Mathematics, elementary Science, grammar and logic puzzles matching school levels dynamically.
+                  Select exactly from Mathematics, elementary Science, grammar
+                  and logic puzzles matching school levels dynamically.
                 </p>
               </div>
             </div>
-
           </div>
-
         </div>
       </div>
     </section>

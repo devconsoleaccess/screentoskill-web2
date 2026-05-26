@@ -87,9 +87,18 @@ export default function CaseStudyPage() {
   // Screenshots slider dataset
   const screenshotSlides = [
     { image: "/images/casestudy/casestudy1.png", tag: "STEP 1: SECURE LOCKS" },
-    { image: "/images/casestudy/casestudy2.png", tag: "STEP 2: GENTLE BARRIER" },
-    { image: "/images/casestudy/casestudy3.png", tag: "STEP 3: SENSORY PUZZLE" },
-    { image: "/images/casestudy/casestudy4.png", tag: "STEP 4: UNLOCKED SUCCESS" },
+    {
+      image: "/images/casestudy/casestudy2.png",
+      tag: "STEP 2: GENTLE BARRIER",
+    },
+    {
+      image: "/images/casestudy/casestudy3.png",
+      tag: "STEP 3: SENSORY PUZZLE",
+    },
+    {
+      image: "/images/casestudy/casestudy4.png",
+      tag: "STEP 4: UNLOCKED SUCCESS",
+    },
     { image: "/images/casestudy/casestudy5.png", tag: "STEP 5: VISUAL CHARTS" },
     { image: "/images/casestudy/casestudy6.png", tag: "STEP 6: PROGRESS VIEW" },
     { image: "/images/casestudy/casestudy7.png", tag: "STEP 7: MILESTONES" },
@@ -241,10 +250,10 @@ export default function CaseStudyPage() {
               {ageGroupCards.map((card, i) => (
                 <div
                   key={i}
-                  className="bg-white border border-[#E5E7EB] hover:border-[#22C55E] p-6 rounded-2xl flex flex-col justify-between space-y-6 shadow-sm hover:shadow-md hover:scale-[1.01] transition-all duration-300"
+                  className="bg-white border border-[#E5E7EB] hover:border-[#22C55E] p-6 rounded-2xl flex flex-col justify-between space-y-6  hover:shadow-md hover:scale-[1.01] transition-all duration-300"
                 >
                   <div className="space-y-3.5">
-                    <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+                    <div className="flex items-center justify-between border-b border-[#E5E7EB] pb-3">
                       <span className="text-xs font-mono font-bold text-[#22C55E] uppercase tracking-wider">
                         {card.ageGroup}
                       </span>
@@ -259,7 +268,7 @@ export default function CaseStudyPage() {
                       {card.desc}
                     </p>
                   </div>
-                  <div className="pt-3 border-t border-slate-100 flex flex-col space-y-1">
+                  <div className="pt-3 border-t border-[#E5E7EB] flex flex-col space-y-1">
                     <span className="text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-400">
                       PROGRESS METRIC:
                     </span>
@@ -273,7 +282,7 @@ export default function CaseStudyPage() {
 
             {/* Accompanying Preschooler image card */}
             <div className="lg:col-span-4 flex">
-              <div className="relative w-full rounded-2xl overflow-hidden border border-[#E5E7EB] shadow-sm bg-white p-5 flex flex-col justify-between min-h-[440px]">
+              <div className="relative w-full rounded-2xl overflow-hidden border border-[#E5E7EB]  bg-white p-5 flex flex-col justify-between min-h-[440px]">
                 <div className="relative w-full h-full rounded-xl overflow-hidden">
                   <Image
                     src="/kidlearn.png"
@@ -305,7 +314,7 @@ export default function CaseStudyPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 py-20 border-b border-[#E5E7EB] items-center text-left">
           {/* LEFT: Full image */}
           <div className="lg:col-span-5">
-            <div className="relative w-full h-[500px] rounded-3xl overflow-hidden border border-[#E5E7EB] shadow-sm group">
+            <div className="relative w-full h-[500px] rounded-3xl overflow-hidden border border-[#E5E7EB]  group">
               <Image
                 src="/childanalytics.jpg"
                 alt="Parent and child reviewing progress analytics dashboard together"
@@ -315,16 +324,13 @@ export default function CaseStudyPage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent" />
 
-           
-
-            
-
-              <div className="absolute bottom-5 left-5 right-5 bg-white/95 backdrop-blur-sm p-4 rounded-2xl border border-slate-100 shadow-lg">
+              <div className="absolute bottom-5 left-5 right-5 bg-white/95 backdrop-blur-sm p-4 rounded-2xl border border-[#E5E7EB] shadow-lg">
                 <span className="text-xs font-mono font-bold text-[#22C55E] uppercase tracking-widest block mb-1">
                   On-Device Progress Sandbox
                 </span>
                 <p className="text-xs text-slate-600 font-normal leading-relaxed">
-                  All analytics stored locally. Zero cloud exports, zero registrations — complete family privacy guaranteed.
+                  All analytics stored locally. Zero cloud exports, zero
+                  registrations — complete family privacy guaranteed.
                 </p>
               </div>
             </div>
@@ -340,13 +346,16 @@ export default function CaseStudyPage() {
                 Track Your Child's Progress — In Complete Privacy
               </h2>
               <p className="text-slate-500 text-sm sm:text-base leading-relaxed font-normal">
-                Every answered question, every unlocked app, every earned coin is silently recorded into a local analytics engine. Parents get deep visibility into cognitive development without sacrificing any data to the cloud.
+                Every answered question, every unlocked app, every earned coin
+                is silently recorded into a local analytics engine. Parents get
+                deep visibility into cognitive development without sacrificing
+                any data to the cloud.
               </p>
             </div>
 
             {/* Four insight blocks */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="bg-white border border-[#E5E7EB] rounded-2xl p-5 space-y-2 shadow-sm hover:border-[#22C55E] hover:shadow-md transition-all">
+              <div className="bg-white border border-[#E5E7EB] rounded-2xl p-5 space-y-2  hover:border-[#22C55E] hover:shadow-md transition-all">
                 <div className="w-9 h-9 rounded-xl bg-[#22C55E]/10 flex items-center justify-center">
                   <BarChart3 className="w-4 h-4 text-[#22C55E]" />
                 </div>
@@ -354,11 +363,12 @@ export default function CaseStudyPage() {
                   Weekly Accuracy Charts
                 </h4>
                 <p className="text-xs text-slate-500 font-normal leading-relaxed">
-                  Visual graphs tracking accuracy across math, geometry, phonics, and science — updated daily after each session.
+                  Visual graphs tracking accuracy across math, geometry,
+                  phonics, and science — updated daily after each session.
                 </p>
               </div>
 
-              <div className="bg-white border border-[#E5E7EB] rounded-2xl p-5 space-y-2 shadow-sm hover:border-[#22C55E] hover:shadow-md transition-all">
+              <div className="bg-white border border-[#E5E7EB] rounded-2xl p-5 space-y-2  hover:border-[#22C55E] hover:shadow-md transition-all">
                 <div className="w-9 h-9 rounded-xl bg-[#22C55E]/10 flex items-center justify-center">
                   <Zap className="w-4 h-4 text-[#22C55E]" />
                 </div>
@@ -366,11 +376,12 @@ export default function CaseStudyPage() {
                   Focus Velocity Scoring
                 </h4>
                 <p className="text-xs text-slate-500 font-normal leading-relaxed">
-                  Response speed is measured per prompt so parents can see whether cognitive reaction time is improving over weeks.
+                  Response speed is measured per prompt so parents can see
+                  whether cognitive reaction time is improving over weeks.
                 </p>
               </div>
 
-              <div className="bg-white border border-[#E5E7EB] rounded-2xl p-5 space-y-2 shadow-sm hover:border-[#22C55E] hover:shadow-md transition-all">
+              <div className="bg-white border border-[#E5E7EB] rounded-2xl p-5 space-y-2  hover:border-[#22C55E] hover:shadow-md transition-all">
                 <div className="w-9 h-9 rounded-xl bg-[#22C55E]/10 flex items-center justify-center">
                   <Trophy className="w-4 h-4 text-[#22C55E]" />
                 </div>
@@ -378,11 +389,12 @@ export default function CaseStudyPage() {
                   Coin & Streak Milestones
                 </h4>
                 <p className="text-xs text-slate-500 font-normal leading-relaxed">
-                  Daily streaks and earned coins show at a glance how consistently a child is engaging with educational challenges.
+                  Daily streaks and earned coins show at a glance how
+                  consistently a child is engaging with educational challenges.
                 </p>
               </div>
 
-              <div className="bg-white border border-[#E5E7EB] rounded-2xl p-5 space-y-2 shadow-sm hover:border-[#22C55E] hover:shadow-md transition-all">
+              <div className="bg-white border border-[#E5E7EB] rounded-2xl p-5 space-y-2  hover:border-[#22C55E] hover:shadow-md transition-all">
                 <div className="w-9 h-9 rounded-xl bg-[#22C55E]/10 flex items-center justify-center">
                   <ShieldCheck className="w-4 h-4 text-[#22C55E]" />
                 </div>
@@ -390,13 +402,15 @@ export default function CaseStudyPage() {
                   100% On-Device Storage
                 </h4>
                 <p className="text-xs text-slate-500 font-normal leading-relaxed">
-                  No accounts, no cloud syncing, no third-party tracking. Analytics live entirely on the family's device, under the parent's pin.
+                  No accounts, no cloud syncing, no third-party tracking.
+                  Analytics live entirely on the family's device, under the
+                  parent's pin.
                 </p>
               </div>
             </div>
 
             {/* Checklist */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 border-t border-slate-100">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 border-t border-[#E5E7EB]">
               {[
                 "Adaptive difficulty adjusts based on real-time correctness speed",
                 "Category proficiency split across all age-group subjects",
@@ -405,7 +419,9 @@ export default function CaseStudyPage() {
               ].map((item, i) => (
                 <div key={i} className="flex items-start space-x-2.5">
                   <CheckCircle2 className="w-4 h-4 text-[#22C55E] mt-0.5 shrink-0" />
-                  <p className="text-sm text-slate-600 font-normal leading-snug">{item}</p>
+                  <p className="text-sm text-slate-600 font-normal leading-snug">
+                    {item}
+                  </p>
                 </div>
               ))}
             </div>
@@ -430,7 +446,7 @@ export default function CaseStudyPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch pt-4 text-left">
             {/* Left Child Portrait */}
             <div className="lg:col-span-5 flex">
-              <div className="relative w-full rounded-2xl overflow-hidden border border-[#E5E7EB] shadow-sm h-[440px] lg:h-[500px] group bg-white">
+              <div className="relative w-full rounded-2xl overflow-hidden border border-[#E5E7EB]  h-[440px] lg:h-[500px] group bg-white">
                 <Image
                   src="/kidscreen.jpg"
                   alt="Pre-school learner celebrating milestone victory"
@@ -439,7 +455,7 @@ export default function CaseStudyPage() {
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-slate-950/75 via-transparent to-transparent" />
-                <div className="absolute bottom-5 left-5 right-5 bg-white/95 backdrop-blur-xs p-4 rounded-xl border border-slate-100 shadow-xs">
+                <div className="absolute bottom-5 left-5 right-5 bg-white/95 backdrop-blur-xs p-4 rounded-xl border border-[#E5E7EB] shadow-xs">
                   <span className="text-[11px] font-mono font-bold text-[#22C55E] uppercase tracking-wider block text-center">
                     INSTANT POSITIVE REINFORCEMENT
                   </span>
@@ -453,7 +469,7 @@ export default function CaseStudyPage() {
 
             {/* Right Features List */}
             <div className="lg:col-span-7 flex flex-col justify-between space-y-4">
-              <div className="bg-white border border-[#E5E7EB] rounded-2xl p-6 flex gap-4 items-start shadow-sm hover:shadow-md transition-all">
+              <div className="bg-white border border-[#E5E7EB] rounded-2xl p-6 flex gap-4 items-start  hover:shadow-md transition-all">
                 <div className="w-10 h-10 rounded-xl bg-[#22C55E]/10 text-[#22C55E] flex items-center justify-center font-bold shrink-0 mt-0.5">
                   <Smartphone className="w-5 h-5" />
                 </div>
@@ -469,7 +485,7 @@ export default function CaseStudyPage() {
                 </div>
               </div>
 
-              <div className="bg-white border border-[#E5E7EB] rounded-2xl p-6 flex gap-4 items-start shadow-sm hover:shadow-md transition-all">
+              <div className="bg-white border border-[#E5E7EB] rounded-2xl p-6 flex gap-4 items-start  hover:shadow-md transition-all">
                 <div className="w-10 h-10 rounded-xl bg-[#22C55E]/10 text-[#22C55E] flex items-center justify-center font-bold shrink-0 mt-0.5">
                   <Sliders className="w-5 h-5" />
                 </div>
@@ -485,7 +501,7 @@ export default function CaseStudyPage() {
                 </div>
               </div>
 
-              <div className="bg-white border border-[#E5E7EB] rounded-2xl p-6 flex gap-4 items-start shadow-sm hover:shadow-md transition-all">
+              <div className="bg-white border border-[#E5E7EB] rounded-2xl p-6 flex gap-4 items-start  hover:shadow-md transition-all">
                 <div className="w-10 h-10 rounded-xl bg-[#22C55E]/10 text-[#22C55E] flex items-center justify-center font-bold shrink-0 mt-0.5">
                   <Trophy className="w-5 h-5" />
                 </div>
@@ -514,7 +530,8 @@ export default function CaseStudyPage() {
               Interactive Application Screenshots
             </h2>
             <p className="text-slate-600 text-sm sm:text-base font-normal leading-relaxed max-w-lg mx-auto">
-              Browse through the exact on-device ScreenToSkill flow, from secure parent setup to real-time progress analytics.
+              Browse through the exact on-device ScreenToSkill flow, from secure
+              parent setup to real-time progress analytics.
             </p>
           </div>
 

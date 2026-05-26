@@ -62,7 +62,7 @@ export default function DownloadApp() {
             <div className="lg:col-span-6 flex justify-center relative max-w-md mx-auto lg:max-w-none w-full">
               <div className="relative w-full aspect-[650/472] rounded-xl overflow-hidden   group">
                 <Image 
-                  src="https://cdn.gtbg.uicore.pro/2025/12/Mobile-App-App-Image-2-650x472.webp" 
+                  src="/Mobile-App.webp" 
                   alt="ScreenToSkill App Dashboard Demonstration" 
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"
