@@ -50,13 +50,13 @@ const earlyGroups: MilestoneDetail[] = [
     code: "STAGE.KAPPA",
     ageRange: "Ages 4–5 (Tiny)",
     groupName: "EARLY COGNITION",
-    title: "Colour & Shape Discoveries",
+    title: "Shapes, Colours & Animal Recognition",
     subtitle:
-      "Eye-catching visual activities designed to construct early spatial memory.",
+      "Bright visual MCQs designed to build early recognition and choice-making.",
     questsDescription:
-      "Vibrant shape matching, chromatic sorting grids, and drag-and-drop silhouette puzzles that build motor skills.",
+      "Children see vibrant shapes, colours and animal visuals, then pick the correct match from simple multiple-choice options.",
     imageUrl: "/images/agegroup/fiveyearkid.png",
-    specs: ["Interactive colors", "Spatial identification", "Simple cartoon cards"],
+    specs: ["Shape recognition", "Colour identification", "Animal visual MCQs"],
     icon: <Sparkles className="w-4 h-4 text-slate-600 dark:text-slate-400" />,
   },
 ];
@@ -67,13 +67,13 @@ const matureGroups: MilestoneDetail[] = [
     code: "STAGE.BETA",
     ageRange: "Ages 6–8 (Young)",
     groupName: "ELEMENTARY FOUNDATION",
-    title: "Explorer Core Logic",
+    title: "Math, English & Science Basics",
     subtitle:
-      "Simple single-digit arithmetic, phonetic spelling, and introductory science trivia.",
+      "Early-school MCQs across single-digit math, simple English words and basic science facts.",
     questsDescription:
-      "Solve math equations, practice spelling drills, and explore outer space layouts with guided interactive card flips.",
+      "Children pick the right answer from MCQs on simple addition and subtraction, basic English vocabulary and spelling, and introductory science questions tuned for early-school understanding.",
     imageUrl: "/images/agegroup/eightyearkid.png",
-    specs: ["Math equations", "Phonetic memory skills", "Nature facts trivia"],
+    specs: ["Math (Grade 1–3)", "English vocabulary", "Basic science MCQs"],
     icon: <Gamepad2 className="w-4 h-4 text-slate-600 dark:text-slate-400" />,
   },
   {
@@ -81,12 +81,12 @@ const matureGroups: MilestoneDetail[] = [
     code: "STAGE.GAMMA",
     ageRange: "Ages 9–12 (Middle)",
     groupName: "SCHOLASTIC SYSTEMS",
-    title: "Academic Reasoning",
+    title: "Math, English, Science & History",
     subtitle:
-      "Intermediate reading grammar, fractions logic, and world geography overview.",
+      "Middle-school MCQs across multiplication & fractions, grammar, science concepts and history.",
     questsDescription:
-      "Complete fractional equations, assemble syntactically correct sentence paths, and identify international landmarks on world maps.",
-    specs: ["Mental logic drills", "Grammar analysis", "Geographical map puzzles"],
+      "Children answer MCQs covering multiplication, division and fractions, English grammar and reading questions, school-level science topics, and basic history facts at middle-school difficulty.",
+    specs: ["Math (Grade 4–7)", "English grammar", "Science & History MCQs"],
     imageUrl: "/images/agegroup/twelveyear.png",
     icon: <BrainCircuit className="w-4 h-4 text-slate-600 dark:text-slate-400" />,
   },
@@ -95,12 +95,12 @@ const matureGroups: MilestoneDetail[] = [
     code: "STAGE.OMEGA",
     ageRange: "Ages 13+ (Teen)",
     groupName: "ADVANCED CRITICAL",
-    title: "Logical Mastery Academy",
+    title: "Math, English, Science & History",
     subtitle:
-      "Analytical algebraic equations, chemistry structures, and passage comprehension.",
+      "High-school MCQs across algebra, English comprehension, advanced science and history.",
     questsDescription:
-      "Refine algebraic reasoning variables, balance molecular symbols, and map paragraph structures for contextual core concepts.",
-    specs: ["Algebraic reasoning", "Physics & Chemistry basics", "Advanced word meanings"],
+      "Teens answer harder MCQs covering algebra and word problems, English comprehension and grammar, secondary-school science across physics, chemistry and biology, plus history concepts at exam-prep difficulty.",
+    specs: ["Algebra & word problems", "English comprehension", "Science & History MCQs"],
     imageUrl: "/images/agegroup/thirteenplus.jpeg",
     icon: <GraduationCap className="w-4 h-4 text-slate-600 dark:text-slate-400" />,
   },

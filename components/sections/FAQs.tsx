@@ -11,24 +11,28 @@ import { HighlightUnderline } from "@/components/ui/HighlightUnderline";
 
 const FAQ_ITEMS = [
   {
-    q: "How does ScreenToSkill lock other mobile apps?",
-    a: "ScreenToSkill uses standard device accessibility and device-management permissions. When a child attempts to tap YouTube, Roblox, lock screen layers activate instantly and prompt them to solve age-aligned MCQs before session approval.",
+    q: "How does ScreenToSkill lock the apps my child uses?",
+    a: "After you grant Accessibility, Display-Over-Other-Apps and Usage Access permissions, you pick the apps you want to regulate — for example YouTube, Instagram or any game. When your child opens one of those apps, a ScreenToSkill overlay appears and they must answer a short MCQ before the app becomes usable.",
   },
   {
-    q: "What happens if my child inputs an incorrect MCQ answer?",
-    a: "The selected app remains closed. The system displays friendly clues and gives children opportunities to study the question and attempt again, converting mindless scrolling into active study training.",
+    q: "What happens if my child picks the wrong answer?",
+    a: "The locked app stays closed. The overlay shows the correct option as a gentle hint and serves another question of the same type so your child can try again — turning every mistake into a quick learning moment instead of frustration.",
   },
   {
-    q: "Can I choose which school subjects to lock with?",
-    a: "Absolutely! Parents have full dashboard access to adjust subject curriculum mixes. Choose from Math (Grade 1-6), Grammar, Science, Vocabulary, or logic puzzles to match their homework goals.",
+    q: "What kind of questions does the app ask?",
+    a: "Everything is multiple-choice, tuned to your child's age band. 2–3 year olds get animal-sound recognition. 4–5 year olds pick shapes, colours and animals from visual MCQs. 6–8 year olds get math, English and basic science. 9–12 year olds get math, English, science and history. 13+ teens get harder math, English, science and history at exam-prep difficulty.",
   },
   {
-    q: "Is there a limit on daily screen time awards?",
-    a: "Yes. From the Master controls, parents can establish customized daily app session quotas (e.g. max 5 sessions of 15-minutes each), reinforcing high-performance limits.",
+    q: "Can I choose which subjects appear in the quizzes?",
+    a: "Yes. From the Question Settings screen you pick the subject mix for the active age group — for example only Math, only English, only Science, only History, or a Random Mix across the subjects available for that age. You can change this anytime; the next overlay uses the new mix.",
   },
   {
-    q: "Does the app store child data or track location?",
-    a: "Never. We enforce strict privacy guidelines. ScreenToSkill does not collect user telemetry or search histories. All progress logs are encrypted locally to preserve child safety.",
+    q: "How much screen time does my child earn for each quiz?",
+    a: "Each correctly-answered set unlocks the selected app for the focus window you have configured. Your child also earns XP and keeps a daily streak — but the app stays open only for the time you allow, so screen time never piles up unchecked.",
+  },
+  {
+    q: "Does ScreenToSkill collect my child's data or track location?",
+    a: "No. ScreenToSkill never reads messages, browsing history or location, and there is no cloud account. All XP, streaks and learning progress are stored locally on the device and are visible only to you in the parent dashboard.",
   },
 ] as const;
 
