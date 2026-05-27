@@ -30,7 +30,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     const prefersDark =
       typeof window !== "undefined" &&
       window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const initial: Theme = stored ?? (prefersDark ? "dark" : "light");
+    const initial: Theme = stored ?? "light";
     setThemeState(initial);
     applyTheme(initial);
   }, []);
@@ -65,6 +65,7 @@ export function useTheme(): ThemeContextValue {
  * Render once inside <head>.
  */
 export function ThemeNoFlashScript() {
-  const code = `(()=>{try{var k='${STORAGE_KEY}';var s=localStorage.getItem(k);var m=window.matchMedia('(prefers-color-scheme: dark)').matches;var t=s||(m?'dark':'light');if(t==='dark'){document.documentElement.classList.add('dark');}document.documentElement.style.colorScheme=t;}catch(e){}})();`;
+  const code = `(()=>{try{var k='${STORAGE_KEY}';var s=localStorage.getItem(k);var t=s||'light';if(t==='dark'){document.documentElement.classList.add('dark');}document.documentElement.style.colorScheme=t;}catch(e){}})();`;
+  
   return <script dangerouslySetInnerHTML={{ __html: code }} />;
 }
