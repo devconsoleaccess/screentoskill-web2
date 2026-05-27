@@ -77,16 +77,17 @@ export default function WhyScreenToSkill() {
                 </p>
               </div>
 
-              <div className="relative mt-6 sm:mt-10 flex justify-center w-full h-[220px] sm:h-[300px] overflow-hidden rounded-b-2xl">
+              <div className="relative mt-6 sm:mt-10 flex justify-center w-full h-[260px] sm:h-[340px] overflow-hidden rounded-2xl">
                 <Image
-                  src="https://cdn.gtbg.uicore.pro/2025/12/Mobile-App-Why-Image.webp"
-                  alt="Why Choose ScreenToSkill Illustration"
+                  src="/kidlearn.png"
+                  alt="Focused child engaged in interactive learning"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-contain object-bottom group-hover:scale-[1.03] duration-500 ease-out transition-transform"
+                  className="object-cover object-center group-hover:scale-[1.03] duration-500 ease-out transition-transform"
                   referrerPolicy="no-referrer"
                   priority
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/30 via-transparent to-transparent pointer-events-none" />
               </div>
             </div>
           </div>

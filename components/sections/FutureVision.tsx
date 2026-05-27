@@ -71,10 +71,10 @@ export default function FutureVision() {
                   <p className="text-slate-800 dark:text-slate-100 text-xs font-normal mt-1 leading-relaxed italic">
                     &ldquo;My son no longer throws screen tantrums because
                     ScreenToSkill handles the locks as a game challenge. He
-                    earns Roblox access honest and proud!&rdquo;
+                    earns his game time honestly and feels proud about it!&rdquo;
                   </p>
                   <span className="block text-[10px] font-medium text-slate-500 dark:text-slate-400 mt-1.5">
-                    &mdash; Emily S., Chicago Mother of 2
+                    &mdash; Sneha Kulkarni, Pune &mdash; mother of two
                   </span>
                 </div>
               </div>

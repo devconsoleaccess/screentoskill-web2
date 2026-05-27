@@ -3,42 +3,20 @@
 import React from "react";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, EffectCoverflow } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/effect-coverflow";
 import { Container } from "@/components/ui/Container";
 import { LinkButton } from "@/components/ui/Button";
 
 const MOCKUPS = [
-  {
-    src: "/mobile3.png",
-    alt: "Parental Analytics App Screenshot",
-    className: "hidden md:flex absolute w-[240px] h-[510px] z-10",
-    style: {
-      transform:
-        "perspective(1200px) rotateY(15deg) scale(0.85) translateX(-150px)",
-      transformStyle: "preserve-3d" as const,
-    },
-  },
-  {
-    src: "/mobile1.png",
-    alt: "ScreenToSkill Challenge Interface Mockup",
-    className: "relative z-20",
-    style: {
-      width: "clamp(160px, 36vw, 230px)",
-      aspectRatio: "390/840",
-      transform: "perspective(1200px) rotateY(0deg)",
-    },
-    priority: true,
-    sizes: "(max-width: 640px) 160px, (max-width: 1024px) 190px, 230px",
-  },
-  {
-    src: "/mobile2.png",
-    alt: "Parent App Lock Filters Screen",
-    className: "hidden lg:flex absolute w-[240px] h-[510px] z-10",
-    style: {
-      transform:
-        "perspective(1200px) rotateY(-15deg) scale(0.85) translateX(130px)",
-      transformStyle: "preserve-3d" as const,
-    },
-  },
+  { src: "/mobile1.png", alt: "ScreenToSkill Challenge Interface Mockup" },
+  { src: "/mobile2.png", alt: "Parent App Lock Filters Screen" },
+  { src: "/mobile3.png", alt: "Parental Analytics App Screenshot" },
+  { src: "/mobile1.png", alt: "ScreenToSkill Quiz Overlay" },
+  { src: "/mobile2.png", alt: "Parent Dashboard Lock Setup" },
+  { src: "/mobile3.png", alt: "Parental Analytics Insights" },
 ];
 
 const STATS = [
@@ -120,12 +98,12 @@ export default function HeroSection() {
               </div>
             </div>
 
-            {/* Right Column: Mockups */}
+            {/* Right Column: Coverflow Mockup Slider */}
             <div
               id="install-interactive"
               className="lg:col-span-6 flex justify-center items-center relative select-none min-h-[440px] sm:min-h-[560px] lg:min-h-[660px] py-6 sm:py-10 overflow-visible isolate"
             >
-              <div className="absolute inset-x-0 inset-y-0 -z-30 pointer-events-none rounded-[3rem] overflow-hidden dark:opacity-40">
+              <div className="absolute inset-x-0 inset-y-0 -z-30 pointer-events-none overflow-hidden dark:opacity-40 rounded-4xl">
                 <Image
                   src="/Mobile-App-Hero-BG.webp"
                   alt="Mobile App Hero BG"
@@ -145,27 +123,58 @@ export default function HeroSection() {
                 <div key={i} className={`${cls} pointer-events-none`} />
               ))}
 
-              <div className="relative w-full flex justify-center items-center h-[300px] sm:h-[400px] lg:h-[460px] perspective-[1200px] overflow-visible">
-                {MOCKUPS.map(({ src, alt, className, style, priority, sizes }) => (
-                  <div
-                    key={src}
-                    className={`overflow-hidden flex flex-col transition-all duration-500 hover:scale-99 group ${className}`}
-                    style={style}
-                  >
-                    <div className="relative w-full h-full overflow-hidden">
-                      <Image
-                        src={src}
-                        alt={alt}
-                        fill
-                        priority={priority}
-                        sizes={sizes ?? "185px"}
-                        className="object-cover group-hover:scale-99 transition-transform duration-500"
-                        referrerPolicy="no-referrer"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-white/5 pointer-events-none" />
-                    </div>
-                  </div>
-                ))}
+              <div className="relative w-full flex justify-center items-center h-[460px] sm:h-[520px] lg:h-[560px] -translate-x-2 sm:-translate-x-4 lg:-translate-x-8">
+                <Swiper
+                  modules={[Autoplay, EffectCoverflow]}
+                  effect="coverflow"
+                  grabCursor
+                  loop
+                  centeredSlides
+                  slidesPerView={3}
+                  spaceBetween={-30}
+                  speed={700}
+                  watchSlidesProgress
+                  autoplay={{
+                    delay: 2800,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: true,
+                  }}
+                  coverflowEffect={{
+                    rotate: 28,
+                    stretch: 0,
+                    depth: 200,
+                    modifier: 1,
+                    slideShadows: false,
+                  }}
+                  className="!w-full !overflow-hidden !py-4"
+                >
+                  {MOCKUPS.map((mockup, i) => (
+                    <SwiperSlide
+                      key={i}
+                      className="!flex justify-center items-center !w-auto [&:not(.swiper-slide-prev):not(.swiper-slide-next):not(.swiper-slide-active)]:opacity-0 transition-opacity duration-500"
+                      style={{ width: "clamp(170px, 26vw, 230px)" }}
+                    >
+                      <div
+                        className="relative overflow-hidden"
+                        style={{
+                          width: "clamp(170px, 26vw, 230px)",
+                          aspectRatio: "390/840",
+                        }}
+                      >
+                        <Image
+                          src={mockup.src}
+                          alt={mockup.alt}
+                          fill
+                          priority={i < 3}
+                          sizes="(max-width: 640px) 170px, (max-width: 1024px) 200px, 230px"
+                          className="object-cover"
+                          referrerPolicy="no-referrer"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-white/5 pointer-events-none" />
+                      </div>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
               </div>
             </div>
           </div>

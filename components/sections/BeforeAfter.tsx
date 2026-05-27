@@ -40,7 +40,7 @@ const BEFORE: Side = {
   headline: "Endless Dopamine Loops",
   image: {
     src: "/images/braindevelop/brainrot.jpg",
-    alt: "Overstimulated Child Passive Screen Time",
+    alt: "Overstimulated child passive screen time",
   },
   points: [
     {
@@ -73,7 +73,7 @@ const AFTER: Side = {
   headline: "Focus Slots Earned Honestly",
   image: {
     src: "/images/braindevelop/activechild.jpg",
-    alt: "Cognitively Engaged Children Learning Happily",
+    alt: "Cognitively engaged child learning happily",
   },
   points: [
     {
@@ -100,18 +100,14 @@ function ComparisonCard({ side }: { side: Side }) {
   const tagColor = isBefore
     ? "bg-rose-500/20 backdrop-blur-md border-rose-500/30 text-rose-300"
     : "bg-emerald-500/20 backdrop-blur-md border-emerald-500/30 text-emerald-300";
-  const badgeBg = isBefore
-    ? "bg-black/45 border-white/10"
-    : "bg-emerald-500/20 border-[var(--color-brand)]/35";
   const PointIcon = isBefore ? XCircle : CheckCircle2;
   const pointColor = isBefore ? "text-rose-500" : "text-emerald-500";
   const footerBg = isBefore
     ? "bg-rose-50/70 dark:bg-rose-500/10 border-rose-100 dark:border-rose-500/20 text-rose-800 dark:text-rose-200"
     : "bg-emerald-50/70 dark:bg-emerald-500/10 border-emerald-100/60 dark:border-emerald-500/20 text-emerald-850 dark:text-emerald-200";
-
   return (
     <div className="group relative bg-[var(--surface)] border border-[var(--border)] hover:border-slate-200 dark:hover:border-slate-700 rounded-2xl hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-2xs">
-      <div className="relative w-full h-[180px] sm:h-[240px] overflow-hidden rounded-t-2xl">
+      <div className="relative w-full h-[300px] sm:h-[380px] lg:h-[440px] overflow-hidden rounded-t-2xl">
         <Image
           src={side.image.src}
           alt={side.image.alt}
@@ -123,7 +119,9 @@ function ComparisonCard({ side }: { side: Side }) {
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/40 to-black/30" />
 
         <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-10">
-          <div className={`flex items-center space-x-1.5 backdrop-blur-md px-2.5 py-1 rounded border text-white ${badgeBg}`}>
+          <div className={`flex items-center space-x-1.5 backdrop-blur-md px-2.5 py-1 rounded border text-white ${
+            isBefore ? "bg-black/45 border-white/10" : "bg-emerald-500/20 border-[var(--color-brand)]/35"
+          }`}>
             {side.badge.icon}
             <span className="text-[9px] sm:text-[10px] font-mono font-bold uppercase tracking-wider">
               {side.badge.label}
