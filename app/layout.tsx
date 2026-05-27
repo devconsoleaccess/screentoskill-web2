@@ -111,7 +111,7 @@ export const metadata: Metadata = {
     google: 'YOUR_GOOGLE_SITE_VERIFICATION_TOKEN',
   },
 };
-// me
+
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
