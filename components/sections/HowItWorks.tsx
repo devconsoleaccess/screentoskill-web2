@@ -26,7 +26,7 @@ const STEPS: Step[] = [
     title: "Sign in & Create Profiles",
     description:
       "Create a secured family account and establish personalized learning profiles for your children.",
-    imageUrl: "/images/casestudy/casestudy2.png",
+    imageUrl: "/images/casestudy/casestudy2.webp",
     badgeText: "Profile Sync Active",
     badgeColor: "text-cyan-400 bg-cyan-500/10 border-cyan-500/40",
     glowColor: "from-cyan-500/12 to-indigo-500/4",
@@ -37,7 +37,7 @@ const STEPS: Step[] = [
     title: "Grant Device Permissions",
     description:
       "Enable required device settings: App Accessibility, Overlay on App, and Usage Permissions to run active block overlays smoothly.",
-    imageUrl: "/images/casestudy/casestudy6.png",
+    imageUrl: "/images/casestudy/casestudy6.webp",
     badgeText: "Granted (All 3)",
     badgeColor: "text-rose-400 bg-rose-500/10 border-rose-500/40",
     glowColor: "from-rose-500/12 to-indigo-500/4",
@@ -48,7 +48,7 @@ const STEPS: Step[] = [
     title: "Select Apps for Learning",
     description:
       "Parents choose target gaming or entertainment apps like Roblox, TikTok, YouTube, or Fortnite to regulate.",
-    imageUrl: "/images/casestudy/casestudy8.png",
+    imageUrl: "/images/casestudy/casestudy8.webp",
     badgeText: "Roblox Selected",
     badgeColor: "text-pink-400 bg-pink-500/10 border-pink-500/40",
     glowColor: "from-pink-500/12 to-indigo-500/4",
@@ -59,7 +59,7 @@ const STEPS: Step[] = [
     title: "Set Focus & Time Locks",
     description:
       "Schedule custom active lock schedules or quick focus intervals during studies, dinner, or bedtime.",
-    imageUrl: "/images/casestudy/casestudy9.png",
+    imageUrl: "/images/casestudy/casestudy9.webp",
     badgeText: "Focus Lock: Active",
     badgeColor: "text-yellow-400 bg-yellow-500/10 border-yellow-500/40",
     glowColor: "from-yellow-500/12 to-indigo-500/4",
@@ -70,7 +70,7 @@ const STEPS: Step[] = [
     title: "Choose Age-Group Curriculums",
     description:
       "Adjust form settings to calibrate challenges: age 2-3 (sounds), 3-4 (shapes, colors), 4-7 (math/words), or 13+ (equations/sciences).",
-    imageUrl: "/images/casestudy/casestudy19.png",
+    imageUrl: "/images/casestudy/casestudy19.webp",
     badgeText: "Set: Age 4-7 Math",
     badgeColor: "text-amber-400 bg-amber-500/10 border-amber-500/40",
     glowColor: "from-amber-500/12 to-indigo-500/4",
@@ -81,7 +81,7 @@ const STEPS: Step[] = [
     title: "App Startup Overlay & Reward XP",
     description:
       "Opening selected apps triggers the learning quiz. Solving questions correctly awards XP, logs stats, and unlocks device use.",
-    imageUrl: "/images/casestudy/casestudy11.png",
+    imageUrl: "/images/casestudy/casestudy11.webp",
     badgeText: "Rewarded: +100 XP",
     badgeColor: "text-violet-400 bg-violet-500/10 border-violet-500/40",
     glowColor: "from-violet-500/12 to-indigo-500/4",
