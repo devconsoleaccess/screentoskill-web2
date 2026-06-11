@@ -144,6 +144,7 @@ export default function HowItWorks() {
                       src={step.imageUrl}
                       alt={step.title}
                       fill
+                      
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 33vw"
                       referrerPolicy="no-referrer"
                       className="object-contain object-center group-hover:scale-102 transition-transform duration-500"

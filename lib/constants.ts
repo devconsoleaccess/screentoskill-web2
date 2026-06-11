@@ -15,7 +15,8 @@ export const NAV_ITEMS: NavItem[] = [
   { kind: "section", id: "#how-it-works", label: "How It Works" },
   { kind: "page", href: "/case-study", label: "Case Study" },
   { kind: "section", id: "#faqs", label: "FAQ" },
-  { kind: "section", id: "#download", label: "Download App" },
+  { kind: "page", href: "/register", label: "Register" },
+
 ];
 
 export type FooterColumn = {

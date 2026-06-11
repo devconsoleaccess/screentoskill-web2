@@ -194,9 +194,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         className="font-sans antialiased text-rendering-optimizeLegibility bg-[var(--background)] text-[var(--foreground)] selection:bg-emerald-100 selection:text-emerald-950 dark:selection:bg-emerald-500/30 dark:selection:text-emerald-50"
       >
         <ThemeProvider>
-          <Header />
+         
           <LenisProvider>{children}</LenisProvider>
-          <Footer />
         </ThemeProvider>
       </body>
     </html>

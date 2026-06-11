@@ -24,6 +24,8 @@ import {
   Zap,
 } from "lucide-react";
 import DownloadApp from "@/components/sections/DownloadApp";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 
 export default function CaseStudyPage() {
   // Age-based curriculum cards
@@ -98,6 +100,9 @@ export default function CaseStudyPage() {
   ];
 
   return (
+    <>
+            <Header />
+    
     <div className="relative min-h-screen w-full bg-[var(--background-subtle)] dark:bg-slate-950 overflow-x-hidden text-slate-800 dark:text-slate-200 font-sans">
       {/* Background radial highlights */}
       <div className="absolute top-0 right-[-10%] w-[50vw] h-[50vw] rounded-full bg-[var(--color-brand)]/5 blur-[130px] -z-20 pointer-events-none" />
@@ -575,5 +580,8 @@ export default function CaseStudyPage() {
 
       <DownloadApp />
     </div>
+    <Footer/>
+    </>
+
   );
 }

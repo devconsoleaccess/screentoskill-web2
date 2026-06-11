@@ -169,6 +169,7 @@ export default function HeroSection() {
                           alt={mockup.alt}
                           fill
                           loading={i < 3 ? 'eager' : 'lazy'}
+                       
                           sizes="(max-width: 640px) 170px, (max-width: 1024px) 200px, 230px"
                           className="object-cover"
                           referrerPolicy="no-referrer"
