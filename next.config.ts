@@ -48,7 +48,7 @@ const nextConfig: NextConfig = {
   compress: true,
 
   output: 'standalone',
-  transpilePackages: ['motion'],
+  transpilePackages: ['motion','@reduxjs/toolkit', 'redux', 'react-redux'],
 
   // Cache headers for static assets — 1 year immutable
   async headers() {

@@ -27,6 +27,7 @@ type SortDir = "asc" | "desc";
 export default function UsersPage() {
   const [users, setUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState(true);
+  const [loadError, setLoadError] = useState<string | null>(null);
   const [search, setSearch] = useState("");
   const [sortKey, setSortKey] = useState<SortKey>("userId");
   const [sortDir, setSortDir] = useState<SortDir>("desc");
@@ -35,10 +36,17 @@ export default function UsersPage() {
 
   useEffect(() => {
     async function load() {
-      const { data } = await supabase
+      const { data, error } = await supabase
         .from("users")
         .select("*")
         .order("userId", { ascending: false });
+      if (error) {
+        setLoadError(error.message);
+      } else if (!data || data.length === 0) {
+        // Read succeeded but nothing came back — almost always an RLS policy
+        // that doesn't grant the logged-in (authenticated) role SELECT access.
+        setLoadError(null);
+      }
       setUsers((data as User[]) ?? []);
       setLoading(false);
     }
@@ -142,6 +150,14 @@ const sorted = useMemo(() => {
           </button>
         </div>
       </div>
+
+      {/* Load error banner */}
+      {loadError && (
+        <div className="flex items-start gap-2.5 text-[12.5px] text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800/60 rounded-xl px-4 py-3">
+          <span className="font-semibold shrink-0">Couldn't load users:</span>
+          <span className="break-all">{loadError}</span>
+        </div>
+      )}
 
       {/* Table card */}
       <div className="bg-white dark:bg-slate-950 rounded-2xl border border-slate-100 dark:border-slate-800 overflow-hidden">

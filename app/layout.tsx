@@ -6,6 +6,7 @@ import LenisProvider from '@/components/providers/LenisProvider';
 import { ThemeProvider, ThemeNoFlashScript } from '@/components/providers/ThemeProvider';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import Providers from './providers';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -193,10 +194,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         suppressHydrationWarning
         className="font-sans antialiased text-rendering-optimizeLegibility bg-[var(--background)] text-[var(--foreground)] selection:bg-emerald-100 selection:text-emerald-950 dark:selection:bg-emerald-500/30 dark:selection:text-emerald-50"
       >
+        <Providers>
+
         <ThemeProvider>
          
           <LenisProvider>{children}</LenisProvider>
         </ThemeProvider>
+        </Providers>
       </body>
     </html>
   );

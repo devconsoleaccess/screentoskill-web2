@@ -1,28 +1,62 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import {
   LayoutDashboard,
   Users,
+  ListChecks,
   LogOut,
   Menu,
   ChevronRight,
+  Loader2,
 } from "lucide-react";
 import { LogoMark, LogoWordmark } from "@/components/icons/Logo";
+import { useAdminAuth, signOutAdmin } from "@/lib/useAdminAuth";
 
 const NAV = [
   { href: "/admin", label: "Dashboard", icon: LayoutDashboard, exact: true },
   { href: "/admin/users", label: "Users", icon: Users },
+  { href: "/admin/questions", label: "Questions", icon: ListChecks },
 ];
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
+  const router = useRouter();
   const [open, setOpen] = useState(false);
+  const { user, loading } = useAdminAuth();
+
+  const isLoginRoute = pathname === "/admin/login";
+
+  // Redirect unauthenticated users to login (except on the login route itself).
+  useEffect(() => {
+    if (!loading && !user && !isLoginRoute) {
+      router.replace("/admin/login");
+    }
+  }, [loading, user, isLoginRoute, router]);
+
+  // The login page renders standalone, without the dashboard chrome.
+  if (isLoginRoute) return <>{children}</>;
+
+  // While resolving the session — or while bouncing an unauthed user — show a spinner.
+  if (loading || !user) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-slate-900">
+        <Loader2 className="w-6 h-6 text-[var(--color-brand)] animate-spin" />
+      </div>
+    );
+  }
+
+  const handleLogout = async () => {
+    await signOutAdmin();
+    router.replace("/admin/login");
+  };
 
   const isActive = (item: (typeof NAV)[number]) =>
     item.exact ? pathname === item.href : pathname.startsWith(item.href);
+
+  const initial = (user.email?.[0] ?? "A").toUpperCase();
 
   const SidebarInner = () => (
     <>
@@ -30,7 +64,6 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       <div className="flex items-center gap-2.5 px-5 py-5 border-b border-slate-100 dark:border-slate-800 shrink-0">
         <LogoMark />
         <LogoWordmark />
-  
       </div>
 
       {/* Nav */}
@@ -38,8 +71,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         <p className="text-[10px] font-semibold uppercase tracking-widest text-slate-400 dark:text-slate-600 px-3 pb-2">
           Menu
         </p>
-        {NAV.map(({ href, label, icon: Icon }) => {
-          const active = isActive({ href, label, icon: Icon, exact: href === "/admin" });
+        {NAV.map(({ href, label, icon: Icon, exact }) => {
+          const active = isActive({ href, label, icon: Icon, exact });
           return (
             <Link
               key={href}
@@ -60,14 +93,21 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       </nav>
 
       {/* Bottom */}
-      <div className="shrink-0 px-3 pb-5 pt-3 border-t border-slate-100 dark:border-slate-800">
+      <div className="shrink-0 px-3 pb-5 pt-3 border-t border-slate-100 dark:border-slate-800 space-y-0.5">
         <Link
           href="/"
-          className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-[13px] font-medium text-slate-500 hover:bg-red-50 dark:hover:bg-red-900/20 hover:text-red-500 transition-all"
+          className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-[13px] font-medium text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-900 hover:text-slate-900 dark:hover:text-slate-100 transition-all"
         >
-          <LogOut className="w-4 h-4" />
+          <ChevronRight className="w-4 h-4" />
           Back to site
         </Link>
+        <button
+          onClick={handleLogout}
+          className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-[13px] font-medium text-slate-500 hover:bg-red-50 dark:hover:bg-red-900/20 hover:text-red-500 transition-all"
+        >
+          <LogOut className="w-4 h-4" />
+          Log out
+        </button>
       </div>
     </>
   );
@@ -97,7 +137,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       <div className="flex flex-col flex-1 min-h-screen lg:pl-60">
 
         {/* Topbar */}
-        <header className="sticky top-0 z-20 flex items-center gap-4 px-5 py-4 bg-white dark:bg-slate-950 border-b border-slate-100 dark:border-slate-800">
+        <header className="sticky top-0 z-20 flex items-center gap-4 px-5 py-4 bg-white/90 dark:bg-slate-950/90 backdrop-blur-sm border-b border-slate-100 dark:border-slate-800">
           <button
             onClick={() => setOpen(true)}
             className="lg:hidden p-1.5 rounded-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
@@ -107,20 +147,22 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           </button>
 
           <div className="flex items-center gap-1.5 text-[13px]">
-            {/* <span className="text-slate-400">Admin</span> */}
             {pathname !== "/admin" && (
               <>
                 <ChevronRight className="w-3.5 h-3.5 text-slate-300" />
                 <span className="font-semibold text-slate-800 dark:text-slate-100 capitalize">
-                  {pathname.split("/").pop()}
+                  {pathname.split("/").filter(Boolean).pop()}
                 </span>
               </>
             )}
           </div>
 
-          <div className="ml-auto">
+          <div className="ml-auto flex items-center gap-2.5">
+            <span className="hidden sm:block text-[12px] text-slate-400 max-w-[160px] truncate">
+              {user.email}
+            </span>
             <div className="w-7 h-7 rounded-full bg-[var(--color-brand)]/15 flex items-center justify-center text-[var(--color-brand)] text-[11px] font-bold select-none">
-              A
+              {initial}
             </div>
           </div>
         </header>
