@@ -49,7 +49,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
   if (isLoginRoute) return <>{children}</>;
 
-  // While resolving the session — or while bouncing an unauthed user — show a spinner.
+  // While resolving the session — or while bouncing an unauthed user — show a spinner
   if (loading || !user) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-slate-900">
