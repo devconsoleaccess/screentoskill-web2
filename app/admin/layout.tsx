@@ -46,7 +46,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     }
   }, [loading, user, isLoginRoute, router]);
 
-  // The login page renders standalone, without the dashboard chrome.
+
   if (isLoginRoute) return <>{children}</>;
 
   // While resolving the session — or while bouncing an unauthed user — show a spinner.
