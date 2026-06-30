@@ -19,7 +19,7 @@ import { AGE_GROUPS, SUBJECTS } from "@/data/questionsData";
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 
-const PAGE_SIZE = 20;
+const PAGE_SIZE = 10;
 const SEARCH_DEBOUNCE_MS = 350;
 
 const OPTION_TYPE_LABELS: Record<string, string> = {

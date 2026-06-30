@@ -7,6 +7,11 @@ import {
   LayoutDashboard,
   Users,
   ListChecks,
+  Gift,
+  Coins,
+  Wallet,
+  Target,
+  Bell,
   LogOut,
   Menu,
   ChevronRight,
@@ -19,6 +24,11 @@ const NAV = [
   { href: "/admin", label: "Dashboard", icon: LayoutDashboard, exact: true },
   { href: "/admin/users", label: "Users", icon: Users },
   { href: "/admin/questions", label: "Questions", icon: ListChecks },
+  { href: "/admin/challenges", label: "Daily Challenges", icon: Target },
+  { href: "/admin/rewards/catalog", label: "Rewards Catalog", icon: Gift },
+  { href: "/admin/rewards/redemptions", label: "Redemptions", icon: Wallet },
+  { href: "/admin/rewards/settings", label: "Reward Settings", icon: Coins },
+  { href: "/admin/notifications", label: "Send Notification", icon: Bell },
 ];
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {

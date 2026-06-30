@@ -74,7 +74,10 @@ export const questionsApi = createApi({
       headers.set("apikey", SUPABASE_ANON_KEY);
       headers.set("Authorization", `Bearer ${SUPABASE_ANON_KEY}`);
       headers.set("Content-Type", "application/json");
-      headers.set("Prefer", "return=representation");
+      // Don't clobber a Prefer already set by an endpoint (e.g. the list query
+      // needs `count=exact` so PostgREST returns the total row count, which the
+      // pagination controls depend on). Only default it for mutations.
+      if (!headers.has("Prefer")) headers.set("Prefer", "return=representation");
       return headers;
     },
   }),
