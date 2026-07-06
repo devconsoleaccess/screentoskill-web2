@@ -7,8 +7,6 @@ import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import { HighlightUnderline } from "@/components/ui/HighlightUnderline";
 
-
-
 const REASONS = [
   "No longer using the app",
   "Privacy concerns",
@@ -17,7 +15,7 @@ const REASONS = [
   "Other",
 ];
 
-const SUPPORT_EMAIL = "support@screentoskill.com";
+const SUPPORT_EMAIL = "screentoskill@appinlay.com";
 
 function buildMailtoLink({
   email,
@@ -41,7 +39,7 @@ function buildMailtoLink({
   const body = bodyLines.join("\n");
 
   return `mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent(
-    subject
+    subject,
   )}&body=${encodeURIComponent(body)}`;
 }
 
@@ -57,7 +55,9 @@ export default function DeleteAccountPage() {
     e.preventDefault();
 
     if (!email.trim() || !reason || !confirmed) {
-      setError("Please fill in all required fields and confirm you understand this action.");
+      setError(
+        "Please fill in all required fields and confirm you understand this action.",
+      );
       return;
     }
 
@@ -74,7 +74,12 @@ export default function DeleteAccountPage() {
 
   if (submitted) {
     return (
-      <Section id="delete-account" tone="subtle" bordered className="bg-[#FBFDFF]/80 dark:bg-slate-950/40">
+      <Section
+        id="delete-account"
+        tone="subtle"
+        bordered
+        className="bg-[#FBFDFF]/80 dark:bg-slate-950/40"
+      >
         <Container>
           <div className="max-w-xl mx-auto bg-[#EBF8F4] dark:bg-emerald-950/40 border border-[#d2efe4] dark:border-emerald-900/60 rounded-2xl sm:rounded-3xl p-8 sm:p-12 text-center">
             <div className="w-14 h-14 mx-auto rounded-full bg-[#E2F7F2] dark:bg-teal-500/15 flex items-center justify-center text-[#0D9488] dark:text-teal-300 mb-5 shadow-xs">
@@ -88,8 +93,8 @@ export default function DeleteAccountPage() {
               request addressed to our support team. Please hit{" "}
               <span className="font-medium">Send</span> in your mail app to
               complete the request for{" "}
-              <span className="font-medium">{email}</span>. Our team will
-              verify and process it within 30 days.
+              <span className="font-medium">{email}</span>. Our team will verify
+              and process it within 30 days.
             </p>
             <p className="text-xs text-[#1F5441]/60 dark:text-emerald-200/60 mt-4">
               Nothing opened?{" "}
@@ -115,7 +120,12 @@ export default function DeleteAccountPage() {
   }
 
   return (
-    <Section id="delete-account" tone="subtle" bordered className="bg-[#FBFDFF]/80 dark:bg-slate-950/40">
+    <Section
+      id="delete-account"
+      tone="subtle"
+      bordered
+      className="bg-[#FBFDFF]/80 dark:bg-slate-950/40"
+    >
       <Container>
         {/* Header card */}
         <div className="bg-[#EBF8F4] dark:bg-emerald-950/40 border border-[#d2efe4] dark:border-emerald-900/60 rounded-2xl sm:rounded-3xl p-6 sm:p-10 lg:p-12 relative overflow-hidden mb-10 sm:mb-14">
@@ -129,8 +139,8 @@ export default function DeleteAccountPage() {
           </div>
           <p className="text-xs sm:text-sm text-[#1F5441]/85 dark:text-emerald-200/80 leading-relaxed font-normal max-w-2xl">
             We&apos;re sorry to see you go. Submit the form below to request
-            permanent deletion of your ScreenToSkill parent account, along
-            with all linked child profiles and learning progress data.
+            permanent deletion of your ScreenToSkill parent account, along with
+            all linked child profiles and learning progress data.
           </p>
         </div>
 
@@ -145,9 +155,9 @@ export default function DeleteAccountPage() {
                 This action is permanent
               </h3>
               <p className="text-xs sm:text-sm text-slate-550 dark:text-slate-400 font-normal leading-relaxed">
-                Deleting your account will permanently remove your profile,
-                all child profiles linked to it, learning progress, rewards,
-                and any saved data. This cannot be undone once processed.
+                Deleting your account will permanently remove your profile, all
+                child profiles linked to it, learning progress, rewards, and any
+                saved data. This cannot be undone once processed.
               </p>
             </div>
           </div>
@@ -257,7 +267,7 @@ export default function DeleteAccountPage() {
                 You can also send a deletion request directly to{" "}
                 <a
                   href={`mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent(
-                    "Account Deletion Request"
+                    "Account Deletion Request",
                   )}`}
                   className="text-[#0284C7] dark:text-sky-300 font-medium hover:underline"
                 >
